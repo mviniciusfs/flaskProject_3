@@ -83,9 +83,21 @@ html {
   top: 110px;
 }
 
+.ajustecad2 {
+  position: fixed;
+  top: 440px;
+  left: 200px;
+}
+
 .ajustecons {
   position: fixed;
   top: 250px;
+}
+
+.ajustecons2 {
+  position: fixed;
+  top: 640px;
+  left: 200px;
 }
 
 
@@ -2827,7 +2839,7 @@ tbody.collapse.show {
     padding-left: 0; } }
 
 .ajustecontain{
-  position: fixed;
+  position: relative;
   top: 200;
 }
 
