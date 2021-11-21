@@ -4,22 +4,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
-  <link rel="stylesheet" href="now-ui-kit.css" type="text/css">
-  <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-  <script src="assets/js/navbar-ontop.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
+  <link rel="stylesheet" href="../static/css/now-ui-kit.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/nucleo-icons.css" type="text/css">
+  <script src="../static/js/navbar-ontop.js"></script>
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
   <title>P PLACAS - Sistemas Web</title>
   <meta name="description" content="Start your development with a beautiful Bootstrap 4 UI kit. It is yours Free.">
-  <meta name="keywords" content="bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, now ui, now ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
+  <meta name="keywords"
+    content="bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, now ui, now ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
 </head>
 
 <body class="">
   <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand " title="Projeto 3 de Sistemas Web! Guilheme, Kewin e Marcos." data-placement="bottom" data-toggle="tooltip" href="#">Info +</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNowUIKitFree">
+      <a class="navbar-brand " title="Projeto 3 de Sistemas Web! Guilheme, Kewin e Marcos." data-placement="bottom"
+        data-toggle="tooltip" href="#">Info +</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarNowUIKitFree">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNowUIKitFree">
@@ -33,12 +38,13 @@
               <i class="now-ui-icons files_paper x2 mr-2"></i>CADASTRO</a>
           </li>
         </ul>
-        <a class="btn btn-light text-primary" href="#pro">
+        <a class="btn btn-light text-primary" href="/">
           <i class="now-ui-icons arrows-1_share-66 mr-1"></i>HOME</a>
       </div>
     </div>
   </nav>
-  <div class="  py-5 text-center parallax cover gradient-overlay " style="background-image: url(&quot;./assets/img/header.jpg&quot;);position:relative;background-position: bottom;background-size: cover;">
+  <div class="  py-5 text-center parallax cover gradient-overlay "
+    style="background-image: url(&quot;../static/img/header.jpg&quot;);position:relative;background-position: bottom;background-size: cover;">
     <div class="container ">
       <div class="row py-3">
         <div class="col-md-12" style="">
@@ -50,7 +56,7 @@
             </div>
             <div class="row mt-4 pt-2">
               <div class="col">
-                <form>
+                <form class="needs-validation" novalidate="" method="post" action="/salvar">
                   <div class="form-group mb-2 ">
                     <div class="input-group border-0">
                       <div class="input-group-prepend">
@@ -58,7 +64,8 @@
                           <i class="now-ui-icons users_circle-08 lg"></i>
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nome Completo...">
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="nome"
+                        placeholder="Nome Completo..." required>
                     </div>
                   </div>
                   <div class="form-group mb-2">
@@ -68,7 +75,8 @@
                           <i class="now-ui-icons tech_mobile lg"></i>
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Contato">
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="contato"
+                        placeholder="Contato" required>
                     </div>
                   </div>
                   <div class="form-group mb-3">
@@ -78,12 +86,42 @@
                           <i class="now-ui-icons ui-1_email-85 lg"></i>
                         </span>
                       </div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email...">
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="email"
+                        placeholder="Email..." required>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <div class="input-group border-0">
+                      <div class="input-group-prepend ">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="now-ui-icons ui-1_email-85 lg"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="latitude"
+                        placeholder="Latitude" required>
+                    </div>
+                  </div>
+                  <div class="form-group mb-3">
+                    <div class="input-group border-0">
+                      <div class="input-group-prepend ">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="now-ui-icons ui-1_email-85 lg"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" id="inlineFormInputGroup" name="longitude"
+                        placeholder="Longitude" required>
                     </div>
                   </div>
                   <div class="form-group">
-                    <div class="input-group"><i contenteditable="true"></i><i class="now-ui-icons text_caps-small lg ml-4 mt-2"></i><input type="text" class="form-control pl-3" id="inlineFormInputGroup" placeholder="Placa Encontrada"></div>
-                  </div><button type="submit" class="btn mt-4 mb-3 btn-light rounded btn-lg text-primary">Realizar Cadastro!</button>
+                    <div class="input-group"><i contenteditable="true"></i><i
+                        class="now-ui-icons text_caps-small lg ml-4 mt-2"></i>
+                      <input type="text" class="form-control pl-3" id="inlineFormInputGroup"
+                        placeholder="Placa Encontrada" name="placa" required>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn mt-4 mb-3 btn-light rounded btn-lg text-primary">
+                    Realizar Cadastro!
+                  </button>
                 </form>
               </div>
             </div>
@@ -96,19 +134,25 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 mx-auto px-0">
-          <img src="assets/img/device_1.png" alt="" class="d-none d-md-block img-fluid" style="">
+          <img src="../static/img/device_1.png" alt="" class="d-none d-md-block img-fluid" style="">
         </div>
       </div>
     </div>
   </div>
   <div class="pt-5"></div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="assets/js/parallax.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="../static/js/parallax.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('[data-toggle="popover"]').popover();
       $('[data-toggle="tooltip"]').tooltip();
       $('#datepicker-example').datepicker({

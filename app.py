@@ -1,5 +1,5 @@
 from json import dump, load
-from flask import Flask, request, json, render_template
+from flask import Flask, request, json, jsonify, render_template
 from os.path import dirname, isfile, realpath
 import requests
 import json
@@ -8,6 +8,8 @@ from werkzeug.utils import redirect
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # CRIA JSON SE N EXISTIR
+
+
 class JsonMananger:
     def __init__(self):
         self.path = dirname(realpath(__file__)) + '/'
@@ -19,28 +21,30 @@ class JsonMananger:
         if not isfile(path_data_json):
             with open(path_data_json, 'w') as f:
                 dump(data, f, indent=2, separators=(',', ': '))
-            return True;
+            return True
         else:
-            return False;
+            return False
 
     # CRIA JSON SE N EXISTIR
 
     # GRAVA NO JSON
     def grava_json(self, file):
-        eletrodomestico = request.form.get('eletrodomestico')
-        req = requests.get('https://happliance.herokuapp.com/api/v1/appliances/name?name=' + eletrodomestico).json()
-        potencia = req['power']
         nome = request.form.get('nome')
-        horas = request.form.get('horas')
-        dias = request.form.get('dias')
+        contato = request.form.get('contato')
+        email = request.form.get('email')
+        latitude = request.form.get('latitude')
+        longitude = request.form.get('longitude')
+        placa = request.form.get('placa')
 
-          # DICIONARIO DO ITEM ATUAL
+        # DICIONARIO DO ITEM ATUAL
         dici = {
             'nome': nome,
-            'eletrodomestico': eletrodomestico,
-            'potencia': potencia,
-            'horas': horas,
-            'dias': dias,
+            'contato': contato,
+            'email': email,
+            'latitude': latitude,
+            'longitude': longitude,
+            'placa': placa,
+
         }
         arq = open(file, mode='r')
         dados = json.load(arq)
@@ -55,7 +59,7 @@ class JsonMananger:
     # LER NO JSON
     def ler_json(self, file):
         if isfile(self.path + file):
-            with  open(self.path + file) as f:
+            with open(self.path + file) as f:
                 data = load(f)
             return data
         else:
@@ -67,6 +71,30 @@ class JsonMananger:
 def index():
     return render_template('index.html')
 
+
+@app.route("/cadastro")
+def cadastro():
+    return render_template('cadastro.html')
+
+
+@app.route("/pesquisa")
+def pesquisa():
+    return render_template('pesquisa.html')
+
+
+@app.route("/salvar", methods=['post'])
+def salvar():
+    jmanager = JsonMananger()
+    jmanager.create_json('BD.json')
+    jmanager.grava_json('BD.json')
+    return redirect('/')
+
+
+@app.route("/data")
+def data():
+    jmanager = JsonMananger()
+    JSON_BD = jmanager.ler_json('BD.json')  # json onde fica os 'BD'
+    return jsonify(JSON_BD)
 
 if __name__ == '__main__':
     app.run()
