@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
   <link rel="stylesheet" href="../static/css/now-ui-kit.css" type="text/css">
   <link rel="stylesheet" href="../static/css/nucleo-icons.css" type="text/css">
   <script type="text/javascript" src="BD.json"></script>
@@ -14,14 +16,17 @@
   <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
   <title>P PLACAS - Sistemas Web</title>
   <meta name="description" content="Start your development with a beautiful Bootstrap 4 UI kit. It is yours Free.">
-  <meta name="keywords" content="bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, now ui, now ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
+  <meta name="keywords"
+    content="bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, now ui, now ui kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit">
 </head>
 
 <body class="">
   <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-dark">
     <div class="container">
-      <a class="navbar-brand" title="Projeto 3 de Sistemas Web! Guilheme, Kewin e Marcos." data-placement="bottom" data-toggle="tooltip" href="#" contenteditable="true">Info +</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNowUIKitFree">
+      <a class="navbar-brand" title="Projeto 3 de Sistemas Web! Guilheme, Kewin e Marcos." data-placement="bottom"
+        data-toggle="tooltip" href="#" contenteditable="true">Info +</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarNowUIKitFree">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNowUIKitFree">
@@ -45,18 +50,32 @@
       <div class="row">
         <div class="mx-auto col-lg-6 bg-dark">
           <h2 contenteditable="true" class="pt-5 mt-5">Agora é só pesquisar...</h2>
-          <p class="mb-4">Insira o código da sua placa como ela é (com ou sem traço), não se preocupe com as diferenças entre a velha e a nova 😉&nbsp;&nbsp;</p>
+          <p class="mb-4">Insira o código da sua placa como ela é (com ou sem traço), não se preocupe com as diferenças
+            entre a velha e a nova 😉&nbsp;&nbsp;</p>
           <form class="form-inline">
             <div class="input-group">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ABC1B34">
-              <div class="input-group-append"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button></div>
+              <form>
+
+                <input type="text" class="form-control" placeholder="ABC1B34" id="codigoPlaca">
+                <div class="input-group-append">
+                  <button onclick="procurarPlaca()" class="btn btn-primary" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                  <!-- <script>
+                    var codigoPlaca = document.getElementById('codigoPlaca').value;
+                    procurarPlaca(codigoPlaca);
+                  </script> -->
+              </form>
+
             </div>
-          </form>
         </div>
+        </form>
       </div>
     </div>
   </div>
-  <div class="py-5 text-center parallax cover gradient-overlay" style="background-image: url(&quot;../static/img/header.jpg&quot;);position:relative;background-position:center center;background-size:cover;">
+  </div>
+  <div class="py-5 text-center parallax cover gradient-overlay"
+    style="background-image: url(&quot;../static/img/header.jpg&quot;);position:relative;background-position:center center;background-size:cover;">
     <div class="container h-25">
       <div class="row">
         <div class="col-md-12">
@@ -64,17 +83,18 @@
           </iframe> -->
           <div id="map"></div>
           <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYL2qcx0FTaj9xvg2zSKfnl1jAz4RvqKU&callback=initMap"
-          async
-        ></script>
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYL2qcx0FTaj9xvg2zSKfnl1jAz4RvqKU&callback=initMap"
+            async></script>
         </div>
 
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="card-body">
-            <h5 class="card-title text-white text-left"><b>Nome de quem encontrou</b></h5>
-            <h6 class="card-subtitle my-2 text-white text-left">Telefone de contato</h6>
+            <h5 class="card-title text-white text-left"><b>Dados de quem encontrou:</b></h5>
+            <h6 class="card-subtitle my-2 text-white text-left" id="nome">Nome:</h6>
+            <h6 class="card-subtitle my-2 text-white text-left" id="email">E-mail:</h6>
+            <h6 class="card-subtitle my-2 text-white text-left" id="contato">Contato:</h6>
             <p class="card-text text-white text-left">Descrição&nbsp; breve de como encontrou</p>
           </div>
         </div>
@@ -85,19 +105,23 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 mx-auto px-0">
-          <img src="../static/img/device_1.png" alt="" class="d-none d-md-block img-fluid" style="">
+          <img src="../static/img/device_1.png" alt="" class="d-none d-md-block img-fluid">
         </div>
       </div>
     </div>
   </div>
   <div class="pt-5"></div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" style=""></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" style=""></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
   <script src="../static/js/parallax.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('[data-toggle="popover"]').popover();
       $('[data-toggle="tooltip"]').tooltip();
       $('#datepicker-example').datepicker({

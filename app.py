@@ -94,6 +94,12 @@ def salvar():
 def data():
     jmanager = JsonMananger()
     JSON_BD = jmanager.ler_json('BD.json')  # json onde fica os 'BD'
+    
+    # for i in JSON_BD:
+    #     teste = i
+
+    # print(JSON_BD)
+
     return jsonify(JSON_BD)
 
 if __name__ == '__main__':

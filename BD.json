@@ -3,8 +3,16 @@
     "nome": "kewin",
     "contato": "27997951206",
     "email": "nerykewin@gmail.com",
-    "latitude": "-20,1165",
-    "longitude": "-40,1812",
+    "latitude": "-20.1165",
+    "longitude": "-40.1812",
     "placa": "BRA2E19"
+  },
+  {
+    "nome": "Jose",
+    "contato": "97989597",
+    "email": "testes?@gmail.com",
+    "latitude": "-20.1268104",
+    "longitude": "-40.1796477",
+    "placa": "OVH7124"
   }
 ]
